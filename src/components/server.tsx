@@ -65,6 +65,7 @@ const serverFormSchema = z.object({
             },
         ),
     ),
+    force_country_code: asOptionalField(z.string()),
 })
 
 export const ServerCard: React.FC<ServerCardProps> = ({ data, mutate }) => {
@@ -244,6 +245,19 @@ export const ServerCard: React.FC<ServerCardProps> = ({ data, mutate }) => {
                                             <FormLabel>{t("Public") + t("Note")}</FormLabel>
                                             <FormControl>
                                                 <Textarea className="resize-y" {...field} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="force_country_code"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>{t("ForceCountryCode")}</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="CN" {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
