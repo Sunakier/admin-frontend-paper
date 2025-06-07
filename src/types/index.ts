@@ -12,3 +12,7 @@ export * from "./notificationStore"
 export * from "./notificationContext"
 export * from "./fm"
 export * from "./settings"
+
+// 为在线用户API响应添加类型别名
+import { GithubComNezhahqNezhaModelValueArrayModelOnlineUser } from "./api"
+export type ModelOnlineUserApi = GithubComNezhahqNezhaModelValueArrayModelOnlineUser
